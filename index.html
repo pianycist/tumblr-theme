@@ -242,18 +242,6 @@
     <p class="header__description">{Description}</p>
     {/block:Description}
 
-    {block:IfEnableSearch}
-    <form id="search-form" class="search" action="/search" method="get">
-      <label><span class="sr-only">Search</span>
-        <input class="search__input" type="text" name="q" placeholder="Search..." value="{SearchQuery}" />
-      </label>
-      <button class="search__button fa">
-        &#xf002;
-        <span class="sr-only">Submit Search Query</span>
-      </button>
-    </form>
-    {/block:IfEnableSearch}
-
     <nav>
       <ul class="nav__list">
         {block:AskEnabled}
@@ -269,6 +257,18 @@
         {/block:HasPages}
       </ul>
     </nav>
+
+    {block:IfEnableSearch}
+    <form id="search-form" class="search" action="/search" method="get">
+      <label><span class="sr-only">Search</span>
+        <input class="search__input" type="text" name="q" placeholder="Search..." value="{SearchQuery}" />
+      </label>
+      <button class="search__button fa">
+        &#xf002;
+        <span class="sr-only">Submit Search Query</span>
+      </button>
+    </form>
+    {/block:IfEnableSearch}
 
     {block:IfChangeHeaderToFixedSidebar}
     <div class="pagination">
