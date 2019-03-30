@@ -245,17 +245,18 @@
 
     <nav>
       <ul class="nav__list">
-        {block:AskEnabled}
-        <li class="nav__list-item"><a class="nav__link" href="/ask" role="menuitem">{AskLabel}</a>
-          {/block:AskEnabled}
-          {block:SubmissionsEnabled}
-        <li class="nav__list-item"><a class="nav__link" href="/submit" role="menuitem">{SubmitLabel}</a>
-          {/block:SubmissionsEnabled}
+       
           {block:HasPages}
           {block:Pages}
         <li class="nav__list-item"><a class="nav__link" href="{URL}" role="menuitem">{Label}</a></li>
         {/block:Pages}
         {/block:HasPages}
+        {block:AskEnabled}
+        <li class="nav__list-item"><a class="nav__link" href="/ask" role="menuitem">{AskLabel}</a>
+        {/block:AskEnabled}
+        {block:SubmissionsEnabled}
+        <li class="nav__list-item"><a class="nav__link" href="/submit" role="menuitem">{SubmitLabel}</a>
+        {/block:SubmissionsEnabled}
       </ul>
     </nav>
 
