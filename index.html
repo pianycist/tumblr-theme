@@ -473,12 +473,12 @@
 
         {block:PermalinkPage}
         <div class="post__source">
-          {block:RebloggedFrom}
-          (reblogged from <a class="accent-link" href="{ReblogParentURL}">{ReblogParentName}</a>)
+          <p>{block:RebloggedFrom}
+          Reblogged from <a class="accent-link" href="{ReblogParentURL}">{ReblogParentName}</a><br>
           {/block:RebloggedFrom}
           {block:ContentSource}
-          via <a class="accent-link" href="{SourceURL}">{SourceTitle}</a>
-          {/block:ContentSource}
+          Source: <a class="accent-link" href="{SourceURL}">{SourceTitle}</a>
+          {/block:ContentSource}</p>
         </div>
         {/block:PermalinkPage}
 
