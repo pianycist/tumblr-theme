@@ -460,7 +460,7 @@
 
       {block:Date}
       <footer class="post__footer">
-        <a class="post__timestamp accent-link" href="{Permalink}" title="{DayOfWeek}, {DayOfMonth} {Month} {Year}, {24Hour}:{Minutes}:{Seconds}">  {block:IfAbsoluteTimestamps}{DayOfWeek}, {DayOfMonth} {Month} {Year}, {12Hour}:{Minutes} {AmPm}<br>{/block:IfAbsoluteTimestamps} {TimeAgo}</a>
+        <a class="post__timestamp accent-link" href="{Permalink}" title="{DayOfWeek}, {DayOfMonth} {Month} {Year}, {24Hour}:{Minutes}:{Seconds}">  {block:IfAbsoluteTimestamps}{DayOfMonth} {Month} {Year}, {12Hour}:{Minutes} {AmPm}<br>{/block:IfAbsoluteTimestamps} {TimeAgo}</a>
 
         {block:NoteCount}
         <a class="post__notes accent-link" href="{Permalink}">{NoteCountWithLabel}</a>
