@@ -15,6 +15,8 @@
   <meta name="image:Logo" content="" />
   <meta name="text:Headline Google Font" content="Montserrat" />
   <meta name="text:Body Google Font" content="Open Sans" />
+  <meta name="text:Chat Post Font" content="Ubuntu Mono" />
+  <meta name="text:Quote Post Font" content="Roboto Slab" />
   <meta name="color:Background Gradient Top" content="#fafafa" />
   <meta name="color:Background Gradient Middle" content="#fafafa" />
   <meta name="color:Background Gradient Bottom" content="#eeeeee" />
@@ -59,6 +61,12 @@
   {block:IfBodyGoogleFont}
   <link href='https://fonts.googleapis.com/css?family={text:Body Google Font}:400,700' rel='stylesheet' type='text/css'>
   {/block:IfBodyGoogleFont}
+  {block:IfChatPostFont}
+  <link href='https://fonts.googleapis.com/css?family={text:Chat Post Font}:400,700' rel='stylesheet' type='text/css'>
+  {/block:IfChatPostFont}
+  {block:IfQuotePostFont}
+  <link href='https://fonts.googleapis.com/css?family={text:Quote Post Font}:400,700' rel='stylesheet' type='text/css'>
+  {/block:IfQuotePostFont}
   <meta name=viewport content='width=device-width, initial-scale=1'>
   <!--[if lt IE 9]>
       <script>
@@ -72,6 +80,7 @@
   <link href="https://static.tumblr.com/bbx9bus/wJkpnse5g/style.css" rel="stylesheet" type="text/css">
 
   <style>
+  
     /* code specifically relating to the theme options */
       body {
         background: -webkit-linear-gradient(top, {color:Background Gradient Top}, {color:Background Gradient Middle}, {color:Background Gradient Bottom});
@@ -90,7 +99,7 @@
       {/block:IfBackgroundImageImage}
 
       {block:IfBodyGoogleFont}
-        body, .post__body h1, .post__body h2, .post__body h3, .post__body h4, .post__body h5, .post__body h6  {
+        body, .post__body h1, .post__body h2,.post__body h3, .post__body h4, .post__body h5, .post__body h6  {
           font-family: '{text:Body Google Font}', 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
       {/block:IfBodyGoogleFont}
@@ -100,7 +109,7 @@
       }
 
       {block:IfHeadlineGoogleFont}
-        h1, h2, h3, h4, h5, h6 {
+        h1, h2, h3, h4, h5, h6,.post__body h2 {
           font-family: '{text:Headline Google Font}', 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
       {/block:IfHeadlineGoogleFont}
@@ -112,7 +121,10 @@
         {/block:IfApplyHeaderAndFooterBackgroundColor}
       }
 
-      .header__title, .search__input {
+      .header__title {
+          color: {color:Post Accent Text Color};
+      }
+      .search__input {
         color: {color:Header And Footer Text Color};
       }
 
@@ -129,7 +141,7 @@
       }
 
       .nav__link {
-        color: {color:Header And Footer Text Color};
+        color: {color:Post Accent Text Color};
       }
 
       .nav__link:hover, .nav__link:active, .nav__link:focus {
@@ -184,11 +196,41 @@
 
       .quote-post__text::before, .quote-post__text::after {
         color: {color:Decoration Color};
-        font-family: '{text:Headline Google Font}', 'Helvetica Neue', Helvetica, Arial, sans-serif;
       }
+      {block:IfQuotePostFont}
+      .quote-post__text,p.npf_quote{
+          font-family: '{text:Quote Post Font}', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      }
+      {/block:IfQuotePostFont}
 
       .chat-post .odd, p.npf_chat:nth-child(odd){
         background-color: rgba({RGBcolor:Decoration Color}, 0.2);
+      }
+      
+      p.npf_chat:first-child{
+          border-radius:5px 5px 0px 0px;
+          border-top:3px solid rgba({RGBcolor:Decoration Color},0.2);
+
+      }
+      p.npf_chat{
+          border-left:3px solid rgba({RGBcolor:Decoration Color},0.2);
+          border-right:3px solid rgba({RGBcolor:Decoration Color},0.2);
+          margin-top:0px;
+          margin-bottom:0px;
+          padding: .25rem;
+
+      }
+      {block:IfChatPostFont}ul.chat-post li,p.npf_chat{
+          font-family:'{text:Chat Post Font}',monospace;
+      }{/block:IfChatPostFont}
+      p.npf_chat:last-child{
+          border-radius:0px 0px 5px 5px;
+          border-bottom:3px solid rgba({RGBcolor:Decoration Color},0.2);
+      }
+      
+      ul.chat-post.post__body{
+          border:3px solid rgba({RGBcolor:Decoration Color},0.2);
+          border-radius:5px;
       }
 
       .chat .reblogs {
